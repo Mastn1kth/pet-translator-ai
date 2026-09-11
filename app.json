@@ -1,0 +1,78 @@
+{
+  "expo": {
+    "name": "Pet Translator AI",
+    "slug": "pet-translator-ai",
+    "version": "1.0.2",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "plugins": [
+      "expo-router",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#13002F",
+          "sounds": []
+        }
+      ],
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "Allow Pet Translator AI to access your microphone to analyze pet sounds.",
+          "recordAudioAndroid": true,
+          "enableBackgroundRecording": false,
+          "enableBackgroundPlayback": false
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow Pet Translator AI to access your photos and videos to analyze pet media.",
+          "cameraPermission": "Allow Pet Translator AI to use your camera to record pet videos and AR filters."
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash.png",
+          "imageWidth": 180,
+          "resizeMode": "contain",
+          "backgroundColor": "#13002F"
+        }
+      ],
+      "expo-sharing",
+      "expo-video"
+    ],
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#13002F"
+      },
+      "package": "com.pettranslator.ai",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.VIBRATE",
+        "android.permission.POST_NOTIFICATIONS"
+      ],
+      "blockedPermissions": [
+        "android.permission.SYSTEM_ALERT_WINDOW"
+      ]
+    },
+    "ios": {
+      "bundleIdentifier": "com.pettranslator.ai",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "Pet Translator needs microphone to analyze your pet sounds.",
+        "NSPhotoLibraryUsageDescription": "Pet Translator needs photo access to analyze your pet.",
+        "NSCameraUsageDescription": "Pet Translator needs camera access to record pet videos and AR filters."
+      }
+    },
+    "scheme": "pet-translator",
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

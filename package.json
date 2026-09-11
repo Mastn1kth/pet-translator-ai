@@ -1,0 +1,80 @@
+{
+  "name": "pet-translator-ai",
+  "version": "1.0.2",
+  "main": "expo-router/entry",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "doctor": "npx --yes expo-doctor",
+    "typecheck": "tsc --noEmit",
+    "test:engines": "tsx src/engine/__tests__/petMemoryEngine.test.ts && tsx src/engine/__tests__/audioFeatureEngine.test.ts && tsx src/engine/__tests__/petSoundRecognitionEngine.test.ts && tsx src/engine/__tests__/soundTranslationFlow.test.ts && tsx src/engine/__tests__/arTrackingEngine.test.ts",
+    "verify": "npm run typecheck && npm run test:engines",
+    "prebuild:android": "expo prebuild --platform android",
+    "android:apk": "cd android && set NODE_ENV=production&& set CI=1&& set EXPO_NO_TELEMETRY=1&& gradlew.bat :app:assembleRelease",
+    "android:aab": "cd android && set NODE_ENV=production&& set CI=1&& set EXPO_NO_TELEMETRY=1&& gradlew.bat :app:bundleRelease"
+  },
+  "expo": {
+    "doctor": {
+      "appConfigFieldsNotSyncedCheck": {
+        "enabled": false
+      },
+      "reactNativeDirectoryCheck": {
+        "exclude": [
+          "react-native-fast-tflite",
+          "react-native-nitro-image",
+          "expo-modules-jsi"
+        ],
+        "listUnknownPackages": false
+      }
+    }
+  },
+  "dependencies": {
+    "@appmetrica/react-native-analytics": "^4.1.0",
+    "@react-native-async-storage/async-storage": "^2.2.0",
+    "expo": "~56.0.15",
+    "expo-asset": "~56.0.19",
+    "expo-audio": "~56.0.12",
+    "expo-blur": "~56.0.3",
+    "expo-clipboard": "~56.0.4",
+    "expo-constants": "~56.0.20",
+    "expo-file-system": "~56.0.8",
+    "expo-haptics": "~56.0.3",
+    "expo-image-picker": "~56.0.20",
+    "expo-linear-gradient": "~56.0.4",
+    "expo-linking": "~56.0.15",
+    "expo-notifications": "~56.0.20",
+    "expo-router": "~56.2.14",
+    "expo-sharing": "~56.0.21",
+    "expo-splash-screen": "~56.0.12",
+    "expo-status-bar": "~56.0.4",
+    "expo-system-ui": "~56.0.5",
+    "expo-video": "~56.1.4",
+    "lucide-react-native": "0.344.0",
+    "react": "^19.2.3",
+    "react-native": "^0.85.3",
+    "react-native-fast-tflite": "^3.0.1",
+    "react-native-gesture-handler": "~2.31.1",
+    "react-native-nitro-image": "^0.15.0",
+    "react-native-nitro-modules": "^0.35.9",
+    "react-native-reanimated": "^4.3.1",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-screens": "^4.25.2",
+    "react-native-svg": "^15.15.4",
+    "react-native-vision-camera": "^5.0.11",
+    "react-native-vision-camera-worklets": "^5.0.11",
+    "react-native-worklets": "^0.8.3",
+    "zustand": "4.4.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@types/node": "^26.1.0",
+    "@types/react": "~19.2.14",
+    "babel-preset-expo": "^56.0.14",
+    "tsx": "^4.22.4",
+    "typescript": "~6.0.3"
+  },
+  "overrides": {
+    "uuid": "^11.1.1"
+  }
+}

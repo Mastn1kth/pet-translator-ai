@@ -173,7 +173,7 @@ android {
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
-    def media3Version = "1.10.1"
+    def media3Version = "1.11.1"
     implementation("androidx.media3:media3-transformer:${media3Version}")
     implementation("androidx.media3:media3-effect:${media3Version}")
     implementation("androidx.media3:media3-common:${media3Version}")
